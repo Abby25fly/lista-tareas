@@ -15,21 +15,21 @@ function addInputJs(){
   var lista = document.getElementById("addList")
   for(var i = 0; i <tareas.length; i++){;
   var li = document.createElement("li");
-  li.innerText="UserId: "+tareas[i].userId+" Id: "+tareas[i].id+" Title: "+tareas[i].title
+  li.innerText=tareas[i].title
   lista.appendChild(li);
   }
 }
-
 addInputJs();
 
-  /*
+function addInput() {
+  var li = document.createElement("li");
   var toDo = document.getElementById("newInput").value;
-  var text = document.createTextNode(toDo);
-  li.appendChild(text);
-  if(tareas === " "){
-    alert("No has escrito nada!");
+  var ntext = document.createTextNode(toDo);
+  li.appendChild(ntext);
+  if (toDo === "") {
+    alert("No has escrito una tarea!");
   } else {
     document.getElementById("addList").appendChild(li);
   }
-  document.getElementById("newInput".value="");
-  */
+  document.getElementById("newInput").value = "";
+}

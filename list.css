@@ -1,0 +1,49 @@
+* {
+  font-family: verdana;
+  font-weight: lighter;
+
+}
+body {
+    background: silver;
+    text-align: center;
+    margin: 100px auto;
+    width: 80%;
+    padding: 20 40px;
+    font: 14px;
+}
+
+h2 {
+    font-size: 50px;
+    color:white;
+}
+input {
+    border: none;
+    width: 60%;
+    padding: 10px;
+    float: center;
+    font-size: 16px;
+}
+
+div {
+    background: #c6012f;
+    border-radius: 4px;
+    border: 5px solid #0c0c0c;
+    margin: -40px 0 0;
+}
+li {
+    color: white;
+    width: 96%;
+    padding: 15px 2%;
+    margin: 0;
+    text-align: left;
+    border-top: 1px solid #D5DDE4;
+}
+
+button {
+    margin:10px;
+    padding:10px 35px;
+    border: none;
+    border-radius: 5px;
+    background: silver;
+    font-family: verdana
+}
