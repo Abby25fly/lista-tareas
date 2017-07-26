@@ -1,4 +1,4 @@
-var tareas = [
+var tasks = [
   {userId: 1, id: 1, title: "Delectus aut autem", completed: false},
   {userId: 1, id: 2, title: "Quis ut nam facilis et officia qui", completed: false},
   {userId: 1, id: 3, title: "Fugiat veniam minus", completed: false},
@@ -10,19 +10,20 @@ var tareas = [
   {userId: 1, id: 9, title: "Molestiae perspiciatis ipsa", completed: false},
   {userId: 1, id: 10,title: "Illo est ratione doloremque quia maiores aut", completed: true}
 ];
-
-// Añair elementos desde el array de objetos
+console.log(tasks);
+// Añadir elementos desde el array de objetos
 function addInputJs(){
   var lista = document.getElementById("addList")
-  for(var i = 0; i <tareas.length; i++){;
+  for(var i = 0; i <tasks.length; i++){;
   var li = document.createElement("li");
-  li.innerText=tareas[i].title
+  li.innerText=tasks[i].title
   lista.appendChild(li);
   }
 }
 addInputJs();
 
-// Añair un elemento
+
+// Añadir un elemento desde el input
 function addInput() {
   var li = document.createElement("li");
   var toDo = document.getElementById("newInput").value;
@@ -34,7 +35,23 @@ function addInput() {
     document.getElementById("addList").appendChild(li);
   }
   document.getElementById("newInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var x = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(x);
+  li.appendChild(span);
+
+  for (i = 0; i < borrar.length; i++) {
+    borrar[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+  tasks.push(toDo);
 }
+
+
 // tachar un elemento de la lista
 var listaTareas = document.querySelector("ul");
 listaTareas.addEventListener("click", function(event) {
@@ -42,3 +59,22 @@ listaTareas.addEventListener("click", function(event) {
     event.target.classList.toggle("checked");
   }
 }, false);
+
+// añadir una X a cada elemento de la lista
+var myTasks = document.getElementsByTagName("LI");
+for (var i = 0; i < myTasks.length; i++) {
+  var span = document.createElement("SPAN");
+  var x = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(x);
+  myTasks[i].appendChild(span);
+}
+
+// Borrar un elemento de la lista
+var borrar = document.getElementsByClassName("close");
+for (var i = 0; i < borrar.length; i++) {
+  borrar[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
